@@ -2,7 +2,8 @@
   "name": "css-namespacing-loader",
   "version": "1.0.0",
   "description": "A WebPack Loader that can add namespaces to all class names in a given CSS file",
-  "main": "index.js",
+  "main": "src/index.js",
+  "files": ["src/*"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +17,14 @@
   ],
   "author": "Hitotsubashi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitotsubashi/css-namespacing-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hitotsubashi/css-namespacing-loader/issues"
+  },
+  "homepage": "https://github.com/Hitotsubashi/css-namespacing-loader#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
