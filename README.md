@@ -68,6 +68,7 @@ If you are questioning the validity of the loader, can go to read the [CSS-names
 ## Options
 
 |Name|Type|Default|Description|
+|----|----|-------|-----------|
 |[`namespace`](#namespace)|`{Array}`|`undefined` |an array contains different namespace and filepath that need to defined|
 
 ### namespace
