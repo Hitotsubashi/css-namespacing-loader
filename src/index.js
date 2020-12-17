@@ -20,7 +20,7 @@ const getPrefix = function getPrefix(resourcePath, namespace) {
   for (let i = 0; i < namespace.length; i += 1) {
     const element = namespace[i];
     const { path, value } = element;
-    if (isString(path) && resourcePath === path) {
+    if (isString(path) && resourcePath.includes(path)) {
       return value;
     }
     if (isRegExp(path) && path.test(resourcePath)) {
@@ -28,7 +28,7 @@ const getPrefix = function getPrefix(resourcePath, namespace) {
     }
     if (Array.isArray(path)) {
       for (let index = 0; index < path.length; index += 1) {
-        if (isString(path[index]) && resourcePath === path[index]) {
+        if (isString(path[index]) && resourcePath.includes(path[index])) {
           return value;
         }
         if (isRegExp(path[index]) && path[index].test(resourcePath)) {
