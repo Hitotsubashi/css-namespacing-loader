@@ -1,0 +1,42 @@
+{
+  "name": "css-namespacing-loader",
+  "version": "1.0.0",
+  "description": "A WebPack Loader that can add namespaces to all class names in a given CSS file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "loader",
+    "css",
+    "namespace",
+    "namespacing",
+    "selector",
+    "webpack"
+  ],
+  "author": "Hitotsubashi",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.19",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "css-namespacing": "^1.0.1",
+    "loader-utils": "^2.0.0",
+    "schema-utils": "^3.0.0"
+  }
+}
