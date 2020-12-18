@@ -1,9 +1,11 @@
 {
   "name": "css-namespacing-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A WebPack Loader that can add namespaces to all class names in a given CSS file",
   "main": "src/index.js",
-  "files": ["src/*"],
+  "files": [
+    "src/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -44,7 +46,7 @@
     "jest": "^26.6.3"
   },
   "dependencies": {
-    "css-namespacing": "^1.0.1",
+    "css-namespacing": "^1.0.3",
     "loader-utils": "^2.0.0",
     "schema-utils": "^3.0.0"
   }
