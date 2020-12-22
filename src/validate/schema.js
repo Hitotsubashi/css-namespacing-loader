@@ -12,11 +12,11 @@ const elementCheck = {
           { type: 'array' },
         ],
       },
-      exclude: {
-        anyOf: [
-          { type: 'string' },
-          { type: 'array' },
-        ],
+      not: {
+        instanceof: 'Array',
+      },
+      only: {
+        instanceof: 'Array',
       },
     },
     additionalProperties: false,
@@ -55,6 +55,28 @@ const pathCheck = {
   },
 };
 
+const notCheck = {
+  schema: {
+    instanceof: 'RegExp',
+  },
+  config: {
+    name: 'not',
+    baseDataPath: 'not',
+  },
+};
+
+const onlyCheck = {
+  schema: {
+    instanceof: 'RegExp',
+  },
+  config: {
+    name: 'only',
+    baseDataPath: 'only',
+  },
+};
+
 exports.optionCheck = optionCheck;
 exports.elementCheck = elementCheck;
 exports.pathCheck = pathCheck;
+exports.notCheck = notCheck;
+exports.onlyCheck = onlyCheck;
