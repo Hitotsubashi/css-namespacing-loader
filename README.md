@@ -38,8 +38,7 @@ module.exports = {
                 { value: 'bsp-', path: [/bootstrap/] }
               ]
             }
-          },
-          "postcss-loader"
+          }
         ]
       }
     ]
@@ -63,13 +62,13 @@ After running `webpack` via your preferred method,when you want to use bootstrap
   </div>
 </div>
 ```
-If you are questioning the validity of the loader, can go to read the [CSS-namespacing example](https://github.com/Hitotsubashi/css-namespacing#availability).
+If you want to learn more about the result after namespacing, please check [css-namespacing](https://github.com/Hitotsubashi/css-namespacing).
 
 ## Options
 
-|Name|Type|Default|Description|
-|----|----|-------|-----------|
-|[`namespace`](#namespace)|`{Array}`|`undefined` |an array contains different namespace and filepath that need to defined|
+|Name|Type|Default|Necessary|Description|
+|----|----|-------|-----------|--|
+|[`namespace`](#namespace)|`{Array}`|`undefined` |`true`|an array contains different namespace and filepath that need to defined|
 
 ### namespace
 
@@ -80,15 +79,16 @@ element in `namespace` is an object,and it contains the following properties.
 
 |Name|Type|Default|Necessary|Description|
 |----|----|-------|-----------|---------|
-|[`path`](#path)|`{Array|String|RegExp}`|`undefined`|`false`|The matching path of the CSS file to add the namespace|
-|[`value`](#value)|`{String}`|`undefined`|`false`|The value of namespace you want to prefix|
-
+|[`path`](#path)|`{Array<String|RegExp>}`|`undefined`|`false`|the matching path of the CSS file to add the namespace|
+|[`value`](#value)|`{String}`|`undefined`|`false`|the value of namespace you want to prefix|
+|[`not`](#not)|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
+|[`only`](#only)|`{Array<RegExp>}`|`undefined`|`false`|only the classname of the namespace will be added, and the classname that is not matched by a regular expression in only will not be added|
 ### path
 
-Type: `{Array|String|RegExp}`
+Type: `{Array<String|RegExp>}`
 Default: `undefined`
 
-**use RegExp(recommend)**
+1.use RegExp in Array
 
 For example:
 
@@ -102,14 +102,14 @@ options:{
 
 It will find matched files through `Regexp.prototype.test` like `path.test(filepath)`
 
-**use String**
+2.use String in Array
 
 For example:
 
 ```js
 options:{
   namespace:[
-    { value: 'bsp-', path: path.resolve(___dirname,'./node_modules/bootstrap/dist/css/bootstrap.min.css') }
+    { value: 'bsp-', path: [path.resolve(___dirname,'./node_modules/bootstrap/dist/css/bootstrap.min.css']) }
   ]
 }
 ```
@@ -117,28 +117,8 @@ It will find matched files through `String.prototype.includes` like `filepath.in
 
 ***Attention: It would be better to use path.resolve to get your path thanks to the difference of file separators between window and linux.***
 
-**use Array**
+3.path is empty
 
-The element in the array is also one of the strings and regular expressions.And Strings and regular expressions are used the same way as above.
-
-For example:
-```js
-options:{
-  namespace:[
-    { 
-      value: 'my-', 
-      path: [
-        path.resolve(___dirname,'./node_modules/bootstrap'),
-        /animate.css/
-        ] 
-    }
-  ]
-}
-```
-And it will gives the "my-" namespace to all class names in the CSS files under bootstrap and animate.css .
-
-
-**use Undefined**
 For example:
 ```js
 options:{
@@ -156,13 +136,12 @@ At this time,it will adds a namespace to the class names of all the SCANNED CSS 
 Type: `{String}`
 Default: `undefined`
 
-**use Undefined**
-For example:
+if value is not defined,for example:
 ```js
 options:{
   namespace:[
     { 
-      path:/bootstrap/ 
+      path:[/bootstrap/]
     }
   ]
 }
