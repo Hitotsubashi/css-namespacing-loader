@@ -1,6 +1,6 @@
 {
   "name": "css-namespacing-loader",
-  "version": "1.0.2",
+  "version": "2.0.0-beta",
   "description": "A WebPack Loader that can add namespaces to all class names in a given CSS file",
   "main": "src/index.js",
   "files": [
