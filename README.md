@@ -90,8 +90,8 @@ element in `namespace` is an object,and it contains the following properties.
 |----|----|-------|-----------|---------|
 |[`path`](#path)|`{Array<String|RegExp>}`|`undefined`|`false`|the matching path of the CSS file to add the namespace|
 |[`value`](#value)|`{String}`|`undefined`|`false`|the value of namespace you want to prefix|
-|`not`|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
-|`only`|`{Array<RegExp>}`|`undefined`|`false`|only the classname  will be prefixed, and the classname that is not matched by a regular expression in only will not be added|
+|[`not`](#not)|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
+|[`only`](#only)|`{Array<RegExp>}`|`undefined`|`false`|only the classname  will be prefixed, and the classname that is not matched by a regular expression in only will not be added|
 ### path
 
 Type: `{Array<String|RegExp>}`
@@ -157,10 +157,37 @@ options:{
 ```
 
 At this time,No namespace will be added to any file scanned in bootstrap.
-### not and only
+### not
 
-If you want to learn more about `not` and `only` ,check [here](https://github.com/Hitotsubashi/css-namespacing#usage).
+Type:`{Array<RegExp>}`
+Default:`undefined`
 
+For example:
+```js
+options:{
+  namespace:[
+    { 
+      path:[/bootstrap/],
+      not:[/^box$/]
+    }
+  ]
+}
+```
+At this time,all classnames named `box` will not be prefixed with namespace in the code of the CSS file being scanned.
+
+### only
+For example:
+```js
+options:{
+  namespace:[
+    { 
+      path:[/bootstrap/],
+      not:[/^box$/]
+    }
+  ]
+}
+```
+At this time,in the code of the CSS file being scanned,only the classname named `box` will be prefixed with namespace
 ## License
 
 [MIT](./LICENSE)
