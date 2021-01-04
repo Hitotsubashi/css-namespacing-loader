@@ -138,7 +138,7 @@ options:{
   ]
 }
 ```
-At this time,it will adds a namespace to the class names of all the SCANNED CSS files.
+At this time,it will adds a namespace to the class names of all the scanned CSS files.
 
 ### value
 
