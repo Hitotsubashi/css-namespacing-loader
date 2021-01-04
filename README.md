@@ -90,8 +90,8 @@ element in `namespace` is an object,and it contains the following properties.
 |----|----|-------|-----------|---------|
 |[`path`](#path)|`{Array<String|RegExp>}`|`undefined`|`false`|the matching path of the CSS file to add the namespace|
 |[`value`](#value)|`{String}`|`undefined`|`false`|the value of namespace you want to prefix|
-|[`not`](#not)|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
-|[`only`](#only)|`{Array<RegExp>}`|`undefined`|`false`|only the classname  will be prefixed, and the classname that is not matched by a regular expression in only will not be added|
+|`not`|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
+|`only`|`{Array<RegExp>}`|`undefined`|`false`|only the classname  will be prefixed, and the classname that is not matched by a regular expression in only will not be added|
 ### path
 
 Type: `{Array<String|RegExp>}`
@@ -155,6 +155,10 @@ options:{
   ]
 }
 ```
+
+### not and only
+
+check [here](https://github.com/Hitotsubashi/css-namespacing#atrulenamespacing).
 
 At this time,No namespace will be added to any file scanned in bootstrap.
 ## License
