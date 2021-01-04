@@ -126,7 +126,7 @@ It will find matched files through `String.prototype.includes` like `filepath.in
 
 ***Attention: It would be better to use path.resolve to get your path thanks to the difference of file separators between window and linux.***
 
-**3.path is empty**
+**3.path is not defined**
 
 For example:
 ```js
