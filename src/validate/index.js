@@ -7,15 +7,21 @@ function validateOptions(options) {
   validate(optionCheck.schema, options, optionCheck.config);
   options.namespace.forEach((element) => {
     validate(elementCheck.schema, element, elementCheck.config);
-    element.path.forEach((val) => {
-      validate(pathCheck.schema, val, pathCheck.config);
-    });
-    element.only.forEach((val) => {
-      validate(onlyCheck.schema, val, onlyCheck.config);
-    });
-    element.not.forEach((val) => {
-      validate(notCheck.schema, val, notCheck.config);
-    });
+    if (Array.isArray(element.path)) {
+      element.path.forEach((val) => {
+        validate(pathCheck.schema, val, pathCheck.config);
+      });
+    }
+    if (Array.isArray(element.only)) {
+      element.only.forEach((val) => {
+        validate(onlyCheck.schema, val, onlyCheck.config);
+      });
+    }
+    if (Array.isArray(element.not)) {
+      element.not.forEach((val) => {
+        validate(notCheck.schema, val, notCheck.config);
+      });
+    }
   });
 }
 
