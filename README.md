@@ -156,11 +156,11 @@ options:{
 }
 ```
 
+At this time,No namespace will be added to any file scanned in bootstrap.
 ### not and only
 
-check [here](https://github.com/Hitotsubashi/css-namespacing#atrulenamespacing).
+If you want to learn more about `not` and `only` ,check [here](https://github.com/Hitotsubashi/css-namespacing#atrulenamespacing).
 
-At this time,No namespace will be added to any file scanned in bootstrap.
 ## License
 
 [MIT](./LICENSE)
