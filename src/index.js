@@ -20,12 +20,6 @@ const getPrefix = function getPrefix(resourcePath, namespace) {
   for (let i = 0; i < namespace.length; i += 1) {
     const element = namespace[i];
     const { path, value } = element;
-    if (isString(path) && resourcePath.includes(path)) {
-      return value;
-    }
-    if (isRegExp(path) && path.test(resourcePath)) {
-      return value;
-    }
     if (Array.isArray(path)) {
       for (let index = 0; index < path.length; index += 1) {
         if (isString(path[index]) && resourcePath.includes(path[index])) {
@@ -47,10 +41,13 @@ const loader = function loader(source) {
   const { resourcePath } = this;
   const options = getOptions.call(this);
   validateOptions(options);
-  const { namespace } = options;
+  const { namespace, not, only } = options;
   const prefix = getPrefix(resourcePath, namespace);
   if (prefix) {
-    return namespacing(source, prefix);
+    const param = { namespace: prefix };
+    if (not) { param.not = not; }
+    if (only) { param.only = only; }
+    return namespacing(source, param);
   }
   return source;
 };

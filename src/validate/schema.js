@@ -1,4 +1,4 @@
-const elementCheck = {
+exports.elementCheck = {
   schema: {
     type: 'object',
     properties: {
@@ -6,17 +6,13 @@ const elementCheck = {
         type: 'string',
       },
       path: {
-        anyOf: [
-          { type: 'string' },
-          { instanceof: 'RegExp' },
-          { type: 'array' },
-        ],
+        instanceof: 'Array',
       },
-      exclude: {
-        anyOf: [
-          { type: 'string' },
-          { type: 'array' },
-        ],
+      not: {
+        instanceof: 'Array',
+      },
+      only: {
+        instanceof: 'Array',
       },
     },
     additionalProperties: false,
@@ -27,7 +23,7 @@ const elementCheck = {
   },
 };
 
-const optionCheck = {
+exports.optionCheck = {
   schema: {
     type: 'object',
     properties: {
@@ -42,7 +38,7 @@ const optionCheck = {
   },
 };
 
-const pathCheck = {
+exports.pathCheck = {
   schema: {
     anyOf: [
       { type: 'string' },
@@ -55,6 +51,22 @@ const pathCheck = {
   },
 };
 
-exports.optionCheck = optionCheck;
-exports.elementCheck = elementCheck;
-exports.pathCheck = pathCheck;
+exports.notCheck = {
+  schema: {
+    instanceof: 'RegExp',
+  },
+  config: {
+    name: 'not',
+    baseDataPath: 'not',
+  },
+};
+
+exports.onlyCheck = {
+  schema: {
+    instanceof: 'RegExp',
+  },
+  config: {
+    name: 'only',
+    baseDataPath: 'only',
+  },
+};
