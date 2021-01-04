@@ -97,7 +97,7 @@ element in `namespace` is an object,and it contains the following properties.
 Type: `{Array<String|RegExp>}`
 Default: `undefined`
 
-1.use RegExp in Array
+**1.use RegExp in Array**
 
 For example:
 
@@ -111,7 +111,7 @@ options:{
 
 It will find matched files through `Regexp.prototype.test` like `path.test(filepath)`
 
-2.use String in Array
+**2.use String in Array**
 
 For example:
 
@@ -126,7 +126,7 @@ It will find matched files through `String.prototype.includes` like `filepath.in
 
 ***Attention: It would be better to use path.resolve to get your path thanks to the difference of file separators between window and linux.***
 
-3.path is empty
+**3.path is empty**
 
 For example:
 ```js
