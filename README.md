@@ -1,6 +1,8 @@
 # css-namespacing-loader
 
-A WebPack Loader that adds a namespace to a CSS file under the specified path. It is based on [css-namespacing](https://www.npmjs.com/package/css-namespacing).
+[中文文档](./README_CN.md)
+
+A WebPack Loader dedicated to handling CSS namespaces. It is based on [css-namespacing](https://www.npmjs.com/package/css-namespacing).
 
 This loader has two functions:
 
@@ -16,7 +18,7 @@ To begin, you'll need to install `css-namespacing-loader`:
 $ npm install css-namespacing --save-dev
 ```
 
-Then add the plugin to your `webpack` config. For example:
+Then add the loader to your `webpack` config. For example:
 
 **entry.js**
 
@@ -77,7 +79,7 @@ If you want to learn more about the result after namespacing, please check [css-
 
 |Name|Type|Default|Necessary|Description|
 |----|----|-------|-----------|--|
-|[`namespace`](#namespace)|`{Array}`|`undefined` |`true`|an array contains different namespace and filepath that need to defined|
+|[`namespace`](#namespace)|`{Array}`|`undefined` |`true`|An array containing multiple configurations|
 
 ### namespace
 
@@ -88,10 +90,10 @@ element in `namespace` is an object,and it contains the following properties.
 
 |Name|Type|Default|Necessary|Description|
 |----|----|-------|-----------|---------|
-|[`path`](#path)|`{Array<String/RegExp>}`|`undefined`|`false`|the matching path of the CSS file to add the namespace|
+|[`path`](#path)|`{Array<String/RegExp>}`|`undefined`|`false`|An array that contains the matching path for the CSS file to add the namespace to|
 |[`value`](#value)|`{String}`|`undefined`|`false`|the value of namespace you want to prefix|
-|[`not`](#not)|`{Array<RegExp>}`|`undefined`|`false`|the classname that is not be prefixed with namespace|
-|[`only`](#only)|`{Array<RegExp>}`|`undefined`|`false`|only the classname  will be prefixed, and the classname that is not matched by a regular expression in only will not be added|
+|[`not`](#not)|`{Array<RegExp>}`|`undefined`|`false`|An array that contains the matching classnames that are not prefixed by specified namespace|
+|[`only`](#only)|`{Array<RegExp>}`|`undefined`|`false`|An array that contains the matching classnames that will only be prefixed by specified namespace|
 ### path
 
 Type: `{Array<String|RegExp>}`
@@ -156,7 +158,7 @@ options:{
 }
 ```
 
-At this time,No namespace will be added to any file scanned in bootstrap.
+At this time,the scanned files will not be processed.
 ### not
 
 Type:`{Array<RegExp>}`
