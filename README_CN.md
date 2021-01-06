@@ -69,7 +69,7 @@ module.exports = {
 
 在`options`中, 你可以设置哪些类名不需要被添加命名空间，或者只有哪些类名需要被添加命名空间，以及命名空间的值。
 
-另外，在CSS代码中，你可以使用`@namespacing`注解灵活地设置以上配置。如果你想了解更多，请查看[这里](https://github.com/Hitotsubashi/css-namespacing#atrulenamespacing)。
+另外，在CSS代码中，你可以使用`@namespacing`注解灵活地设置以上配置。如果你想了解更多，请查看[这里](https://github.com/Hitotsubashi/css-namespacing#atrule)。
 
 如果你想查看关于处理后的结果，请阅读[css-namespacing](https://github.com/Hitotsubashi/css-namespacing).
 
