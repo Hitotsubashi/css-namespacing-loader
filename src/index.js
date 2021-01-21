@@ -15,39 +15,40 @@ const getOptions = function getOptions() {
   return options;
 };
 
-const getPrefix = function getPrefix(resourcePath, namespace) {
-  let prefix;
+const getOption = function getOption(resourcePath, namespace) {
+  const option = {};
   for (let i = 0; i < namespace.length; i += 1) {
     const element = namespace[i];
-    const { path, value } = element;
+    const {
+      path, value, not, only,
+    } = element;
     if (Array.isArray(path)) {
       for (let index = 0; index < path.length; index += 1) {
         if (isString(path[index]) && resourcePath.includes(path[index])) {
-          return value;
+          return { namespace: value, not, only };
         }
         if (isRegExp(path[index]) && path[index].test(resourcePath)) {
-          return value;
+          return { namespace: value, not, only };
         }
       }
     }
     if (path === undefined) {
-      prefix = value;
+      option.namespace = value;
+      option.not = not;
+      option.only = only;
     }
   }
-  return prefix;
+  return option;
 };
 
 const loader = function loader(source) {
   const { resourcePath } = this;
   const options = getOptions.call(this);
   validateOptions(options);
-  const { namespace, not, only } = options;
-  const prefix = getPrefix(resourcePath, namespace);
-  if (prefix) {
-    const param = { namespace: prefix };
-    if (not) { param.not = not; }
-    if (only) { param.only = only; }
-    return namespacing(source, param);
+  const { namespace } = options;
+  const option = getOption(resourcePath, namespace);
+  if (option && option.namespace) {
+    return namespacing(source, option);
   }
   return source;
 };

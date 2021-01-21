@@ -15,7 +15,7 @@ This loader has two functions:
 To begin, you'll need to install `css-namespacing-loader`:
 
 ```console
-$ npm install css-namespacing --save-dev
+$ npm install css-namespacing-loader --save-dev
 ```
 
 Then add the loader to your `webpack` config. For example:

@@ -13,7 +13,7 @@
 一开始，你要通过npm下载 `css-namespacing-loader`:
 
 ```console
-$ npm install css-namespacing --save-dev
+$ npm install css-namespacing-loader --save-dev
 ```
 
 然后把loader添加到 `webpack` 配置中。例如:
