@@ -71,7 +71,7 @@ After running `webpack` via your preferred method,when you want to use bootstrap
 
 In the `options`, you can set which classnames do not need to be prefixed, or only which classnames need to be prefixed, and the value of the namespace.
 
-In addition, in the CSS code, you can use `@namespacing` flexibly set the above configuration.If you want to learn more,check [here](https://github.com/Hitotsubashi/css-namespacing#atrulenamespacing).
+In addition, in the CSS code, you can use `@namespacing` flexibly set the above configuration.If you want to learn more,check [here](https://github.com/Hitotsubashi/css-namespacing#atrule).
 
 If you want to learn more about the result after namespacing, please check [css-namespacing](https://github.com/Hitotsubashi/css-namespacing).
 
