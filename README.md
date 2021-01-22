@@ -18,13 +18,15 @@ To begin, you'll need to install `css-namespacing-loader`:
 $ npm install css-namespacing-loader --save-dev
 ```
 
-Then add the loader to your `webpack` config. For example:
+In the entry file, you import `bootstrap` 
 
 **entry.js**
 
 ```js
 import 'bootstrap/dist/css/bootstrap.min.css'
 ```
+
+Then add the loader to your `webpack` config. For example:
 
 **webpack.config.js**
 

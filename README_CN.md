@@ -16,13 +16,15 @@
 $ npm install css-namespacing-loader --save-dev
 ```
 
-然后把loader添加到 `webpack` 配置中。例如:
+在入口文件中，你引入了`bootstrap`
 
 **entry.js**
 
 ```js
 import 'bootstrap/dist/css/bootstrap.min.css'
 ```
+
+然后把loader添加到 `webpack` 配置中。例如:
 
 **webpack.config.js**
 
